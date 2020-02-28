@@ -1,0 +1,55 @@
+import arcade
+import random
+import math
+WIDTH = 800
+HEIGHT = 600
+window = arcade.Window(WIDTH, HEIGHT, "My Arcade Game")
+arcade.set_background_color(arcade.color.WHITE)
+# Initialize your variables here
+
+circleR = 35
+circleX = random.randint(circleR,WIDTH-circleR)
+circleY = random.randint(circleR,HEIGHT-circleR)
+totalClick=0
+hitClick=0
+
+
+@window.event("on_draw")
+def game_loop():
+    global circleR
+    global circleX
+    global circleY
+    global WIDTH
+    global HEIGHT
+    global totalClick
+    global hitClick
+    
+    arcade.start_render()
+    arcade.draw_text("Accuracy: "+str(round((hitClick/(totalClick+0.001))*100))+"%",WIDTH-100,HEIGHT-15,arcade.color.BLACK)
+    arcade.draw_text("Score: "+str(hitClick),WIDTH-100,HEIGHT-30,arcade.color.BLACK)
+    
+    
+    if(circleR>=0):
+        arcade.draw_circle_filled(circleX,circleY,circleR,arcade.color.BLUE)
+        circleR-= 0.08
+    else:
+        arcade.draw_text("You Lose",WIDTH/2-100,HEIGHT/2-25,arcade.color.BLACK,50)
+    
+    
+@window.event("on_mouse_press")
+def on_mouse_press(mouseX,mouseY,y,z):
+    global circleX
+    global circleY
+    global circleR
+    global totalClick
+    global hitClick
+    
+    totalClick+=1
+    
+    if(math.sqrt((mouseX-circleX)**2+(mouseY-circleY)**2)<=circleR):
+        circleX = random.uniform(circleR,WIDTH-circleR)
+        circleY = random.uniform(circleR,HEIGHT-circleR)
+        circleR+= 6
+        hitClick+=1
+        
+arcade.run()
