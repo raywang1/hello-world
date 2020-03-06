@@ -1,1 +1,92 @@
+"""
+#1.
+i = 297
+while i >= 195:
+  print (i)
+  i -= 10
+print ("done")
+"""
+
+"""
+#2.
+i = -258
+while i <= 46:
+  print (i)
+  i += 4
+print ("done")
+"""
+
+"""
+#3.
+i = -181
+while i <= -57:
+  print (i)
+  i += 13
+print ("done")
+"""
+
+"""
+#4.
+i = 281
+while i >= -346:
+  print (i)
+  i -= 16
+print ("done")
+"""
+
+"""
+#5
+i = -320
+while i <= 91:
+  print (i)
+  i += 13
+print ("done")
+"""
+
+"""
+#6
+i = 54
+while i <= 215:
+  print (i)
+  i += 2
+print ("done")
+"""
+
+"""
+#7
+i = 145
+while i >= -471:
+  print (i)
+  i -= 16
+print ("done")
+"""
+
+"""
+#8
+i = -473
+while i <= 364:
+  print (i) 
+  i += 4
+print ("done")
+"""
+
+"""
+#9
+i = 141
+while i <= 373:
+  print (i)
+  i += 17
+print ("done")
+"""
+
+"""
+#10
+i = 4
+while i >= -256:
+  print (i)
+  i -= 10
+print ("done")
+"""
+
+
 https://repl.it/@raywang2004/while-loop-practice
